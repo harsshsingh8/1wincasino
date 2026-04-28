@@ -1,0 +1,169 @@
+.live-casino {
+  padding: 60px 0;
+  background: linear-gradient(180deg, var(--dark-bg) 0%, #0a0f14 100%);
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.live-games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.live-game-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.live-game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+  border-color: var(--accent-orange);
+}
+
+.live-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ff0000;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.live-game-image {
+  height: 200px;
+  background: linear-gradient(135deg, #2a1f3d, #1a1423);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-game-emoji {
+  font-size: 72px;
+  transition: transform 0.3s ease;
+}
+
+.live-game-card:hover .live-game-emoji {
+  transform: scale(1.2);
+}
+
+.btn-play-live {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--accent-orange), #e55a2b);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.live-game-card:hover .btn-play-live {
+  bottom: 20px;
+}
+
+.btn-play-live:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.live-game-info {
+  padding: 20px;
+}
+
+.live-game-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.dealer-name {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.live-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.players-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-green);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .live-games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .live-games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .live-game-image {
+    height: 160px;
+  }
+
+  .live-game-emoji {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .live-games-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .live-game-info {
+    padding: 15px;
+  }
+
+  .live-game-info h3 {
+    font-size: 16px;
+  }
+}
